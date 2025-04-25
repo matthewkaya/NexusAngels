@@ -1,7 +1,6 @@
-FROM httpd:2.4
+FROM httpd:2.4-alpine
 
-COPY public_html/ /usr/local/apache2/htdocs/
-
+# We'll use a volume mount in the devcontainer.json instead of COPY
 EXPOSE 80
 
 CMD ["httpd-foreground"]

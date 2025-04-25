@@ -4,11 +4,18 @@
     "appPort": [
         80
     ],
-    "extensions": [
-        "ms-azuretools.vscode-docker"
+    "mounts": [
+        "source=${workspaceFolder}/public_html,target=/usr/local/apache2/htdocs,type=bind,consistency=cached"
     ],
-    "settings": {
-        "terminal.integrated.shell.linux": "/bin/bash"
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-azuretools.vscode-docker"
+            ],
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash"
+            }
+        }
     },
-    "postCreateCommand": "sudo service apache2 start"
+    "postCreateCommand": "echo 'Apache server is running on port 80'"
 }
