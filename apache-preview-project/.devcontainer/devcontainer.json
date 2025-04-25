@@ -1,0 +1,14 @@
+{
+    "name": "Apache Preview Project",
+    "dockerFile": "Dockerfile",
+    "appPort": [
+        80
+    ],
+    "extensions": [
+        "ms-azuretools.vscode-docker"
+    ],
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "postCreateCommand": "sudo service apache2 start"
+}
