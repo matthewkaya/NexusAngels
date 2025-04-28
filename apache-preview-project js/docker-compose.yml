@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  apache:
+    image: digisfer/angelinvestor:1.0.0
+    container_name: apache-web-server
+    ports:
+      - "8080:80"
+    volumes:
+      - ./public_html:/usr/local/apache2/htdocs/
+    restart: unless-stopped

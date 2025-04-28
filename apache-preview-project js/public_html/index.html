@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Northern Spark - High-Impact Investments</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neon-yellow': '#FFFF00',
+                        'dark-bg': '#0a0a0a',
+                        'darker-bg': '#050505',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="min-h-screen">
+    <!-- Navigasyon Bileşeni -->
+    <div id="navbar-component"></div>
+
+    <!-- Ana İçerik -->
+    <main>
+        <!-- Ana Sayfa Bileşeni -->
+        <div id="home-component"></div>
+        
+        <!-- Hakkımızda Bileşeni -->
+        <div id="about-component"></div>
+        
+        <!-- Portföy Bileşeni -->
+        <div id="portfolio-component"></div>
+        
+        <!-- Süreç Bileşeni -->
+        <div id="process-component"></div>
+        
+        <!-- Takım Bileşeni -->
+        <div id="team-component"></div>
+        
+        <!-- İletişim Bileşeni -->
+        <div id="contact-component"></div>
+    </main>
+    
+    <!-- Footer Bileşeni -->
+    <div id="footer-component"></div>
+    
+    <!-- Bileşen Yükleyici Script -->
+    <script src="js/componentLoader.js"></script>
+</body>
+</html>

@@ -5,8 +5,12 @@ body {
     background-color: #0a0a0a;
     color: white;
     scroll-behavior: smooth;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
+/* Neon Effects */
 .neon-text {
     text-shadow: 0 0 10px rgba(255, 255, 0, 0.7);
 }
@@ -33,4 +37,223 @@ body {
 .active-page {
     color: #FFFF00 !important;
     border-bottom: 2px solid #FFFF00;
+}
+
+/* Color variables for easy usage throughout the site */
+:root {
+    --neon-yellow: #FFFF00;
+    --dark-bg: #0a0a0a;
+    --darker-bg: #050505;
+}
+
+/* Fix for background opacity modifiers */
+.bg-neon-yellow\/10 {
+    background-color: rgba(255, 255, 0, 0.1);
+}
+
+.bg-neon-yellow\/20 {
+    background-color: rgba(255, 255, 0, 0.2);
+}
+
+.border-neon-yellow\/50 {
+    border-color: rgba(255, 255, 0, 0.5);
+}
+
+/* Fixed backdrop blur */
+.backdrop-blur-md, .backdrop-blur-sm {
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+}
+
+/* Background with opacity fixes */
+.bg-black\/50 {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.bg-black\/90 {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-slow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-bounce {
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Layout classes */
+.min-h-screen {
+    min-height: 100vh;
+}
+
+.py-20 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.pt-20 {
+    padding-top: 5rem;
+}
+
+.max-w-7xl {
+    max-width: 80rem;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive grid */
+.grid {
+    display: grid;
+}
+
+@media (min-width: 768px) {
+    .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    
+    .md\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    
+    .md\:w-1\/2 {
+        width: 50%;
+    }
+    
+    .md\:flex {
+        display: flex;
+    }
+    
+    .md\:block {
+        display: block;
+    }
+    
+    .md\:hidden {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    .lg\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Fix for portfolio item image container */
+.h-48 {
+    height: 12rem;
+}
+
+.h-64 {
+    height: 16rem;
+}
+
+/* Fixes for team member images */
+.object-cover {
+    object-fit: cover;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+/* Navigation styles */
+.fixed {
+    position: fixed;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.z-50 {
+    z-index: 50;
+}
+
+/* Mobile menu controls */
+#mobile-menu {
+    transition: all 0.3s ease;
+}
+
+#mobile-menu.hidden {
+    display: none;
+}
+
+/* Fix for blur effects */
+.blur-xl, .blur-3xl {
+    filter: blur(24px);
+}
+
+/* Accessibility fixes */
+a:focus, button:focus {
+    outline: 2px solid var(--neon-yellow);
+    outline-offset: 2px;
+}
+
+/* Fixes for specific component requirements */
+.from-black\/90 {
+    --tw-gradient-from: rgba(0, 0, 0, 0.9);
+}
+
+.to-black\/50 {
+    --tw-gradient-to: rgba(0, 0, 0, 0.5);
+}
+
+.bg-darker-bg {
+    background-color: var(--darker-bg);
+}
+
+.bg-black {
+    background-color: black;
+}
+
+/* Fix for portfolio item badges */
+.rounded-full {
+    border-radius: 9999px;
+}
+
+.gap-2 {
+    gap: 0.5rem;
+}
+
+.text-xs {
+    font-size: 0.75rem;
+}
+
+.text-neon-yellow {
+    color: var(--neon-yellow);
+}
+
+/* Better transitions */
+.transition {
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.duration-300 {
+    transition-duration: 300ms;
 }

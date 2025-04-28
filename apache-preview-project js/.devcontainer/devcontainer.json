@@ -1,0 +1,21 @@
+{
+    "name": "Apache Preview Project",
+    "dockerFile": "Dockerfile",
+    "appPort": [
+        80
+    ],
+    "mounts": [
+        "source=${workspaceFolder}/public_html,target=/usr/local/apache2/htdocs,type=bind,consistency=cached"
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-azuretools.vscode-docker"
+            ],
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash"
+            }
+        }
+    },
+    "postCreateCommand": "echo 'Apache server is running on port 80'"
+}
